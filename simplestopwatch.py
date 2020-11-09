@@ -20,7 +20,6 @@ try:
         input()
         lap_time = round(time.time() - last_time, 2)
         total_time = round(time.time() - start_time, 2)
-        print(f'Lap#{lap_num}: total time:{total_time}, laptime:{lap_time}', end='')
 
         lap = 'lap # {} {} ({})'.format((str(lap_num)+ ':').ljust(3),
                                          str(total_time).rjust(5),
@@ -29,6 +28,6 @@ try:
 
         lap_num += 1
         last_time = time.time()
-        pyperclip.paste(lap)
+        pyperclip.copy(lap)
 except KeyboardInterrupt:
     print('And it\'s done')
